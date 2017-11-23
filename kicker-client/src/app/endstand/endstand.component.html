@@ -4,14 +4,9 @@
     <th>Tore</th>
     <th>Spieler 2</th>
   </tr>
-  <tr>
-    <td>a</td>
-    <td>1:6</td>
-    <td>b</td>
-  </tr>
-  <tr>
-    <td>c</td>
-    <td>2:6</td>
-    <td>d</td>
+  <tr *ngFor="let endstand of endstaende">
+    <td>{{endstand.spieler1}}</td>
+    <td>{{endstand.tore1}}:{{endstand.tore2}}</td>
+    <td>{{endstand.spieler2}}</td>
   </tr>
 </table>
