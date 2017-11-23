@@ -1,24 +1,26 @@
-<form id="formidable">
-  <input type="text" name="spieler1" required>
-  <select name="tore1">
-    <option value=0>0</option>
-    <option value=1>1</option>
-    <option value=2>2</option>
-    <option value=3>3</option>
-    <option value=4>4</option>
-    <option value=5>5</option>
-    <option value=6>6</option>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <input type="text" name="spieler1" ngModel required>
+  <select name="tore1" ngModel required>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
   </select>
   :
-  <select name="tore2">
-    <option value=0>0</option>
-    <option value=1>1</option>
-    <option value=2>2</option>
-    <option value=3>3</option>
-    <option value=4>4</option>
-    <option value=5>5</option>
-    <option value=6>6</option>
+  <select name="tore2" ngModel required>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
   </select>
-  <input type="text" name="spieler2" required>
+  <input type="text" name="spieler2" ngModel required>
   <input type="submit" />
 </form>
+<pre>{{f.value | json}}</pre>
+<p>{{f.valid}}</p>
