@@ -4,9 +4,9 @@
     <th>Tore</th>
     <th>Spieler 2</th>
   </tr>
-  <tr *ngFor="let endstand of endstaende">
-    <td>{{endstand.spieler1}}</td>
-    <td>{{endstand.tore1}}:{{endstand.tore2}}</td>
-    <td>{{endstand.spieler2}}</td>
+  <tr *ngFor="let x of endstaende">
+    <td [ngStyle]="{'color': x.tore1 === 6 ? 'green' : 'red'}">{{x.spieler1}}</td>
+    <td>{{x.tore1}}:{{x.tore2}}</td>
+    <td [ngStyle]="{'color': x.tore2 === 6 ? 'green' : 'red'}">{{x.spieler2}}</td>
   </tr>
 </table>
