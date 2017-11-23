@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Endstand } from '../shared/endstand';
+import { EndstandService } from '../shared/endstand.service';
 
 @Component({
   selector: 'app-endstand',
@@ -9,13 +10,13 @@ import { Endstand } from '../shared/endstand';
 })
 export class EndstandComponent implements OnInit {
 
-  endstaende: Endstand[] = [
-    { spieler1: "e", spieler2: "f", tore1: 3, tore2: 6 },
-    { spieler1: "g", spieler2: "h", tore1: 4, tore2: 6 },
-  ];
+  endstaende: Endstand[] = [];
 
-  constructor() { }
+  constructor(private endstandService: EndstandService) { }
 
   ngOnInit() {
+    this.endstandService.getEndstaende().subscribe(endstaende => {
+      this.endstaende = endstaende;
+    });
   }
 }
