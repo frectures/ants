@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { EndstandComponent } from './endstand/endstand.component';
 import { EndstandService } from './shared/endstand.service';
+import { NewEndstandComponent } from './new-endstand/new-endstand.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EndstandComponent
+    EndstandComponent,
+    NewEndstandComponent
   ],
   imports: [
     BrowserModule,

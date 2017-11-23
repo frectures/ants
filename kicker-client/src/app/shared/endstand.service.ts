@@ -12,4 +12,8 @@ export class EndstandService {
   getEndstaende(): Observable<Endstand[]> {
     return this.http.get<Endstand[]>('http://localhost:8080/endstand');
   }
+
+  postEndstand(endstand: Endstand): Observable<Endstand[]> {
+    return this.http.post<Endstand[]>('http://localhost:8080/endstand', endstand);
+  }
 }
