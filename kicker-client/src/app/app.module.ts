@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EndstandComponent } from './endstand/endstand.component';
+import { EndstandService } from './shared/endstand.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { EndstandComponent } from './endstand/endstand.component';
     EndstandComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EndstandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
