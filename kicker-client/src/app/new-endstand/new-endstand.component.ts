@@ -12,17 +12,14 @@ export class NewEndstandComponent implements OnInit {
 
   constructor(private endstandService: EndstandService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
   
   onSubmit(f: any) {
     if (!f.valid) {
       alert('invalid form!');
     } else {
       let endstand = f.value as Endstand;
-      this.endstandService.postEndstand(endstand).subscribe(data => {
-        alert("POST successful, please refresh your browser!");
-      });
+      this.endstandService.postEndstand(endstand);
     }
   }
 }
