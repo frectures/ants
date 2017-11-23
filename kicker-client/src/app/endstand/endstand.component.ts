@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { Endstand } from '../shared/endstand';
 import { EndstandService } from '../shared/endstand.service';
 
@@ -10,13 +12,11 @@ import { EndstandService } from '../shared/endstand.service';
 })
 export class EndstandComponent implements OnInit {
 
-  endstaende: Endstand[] = [];
+  endstaende: Observable<Endstand[]> = this.endstandService.endstaende;
 
   constructor(private endstandService: EndstandService) { }
 
   ngOnInit() {
-    this.endstandService.getEndstaende().subscribe(endstaende => {
-      this.endstaende = endstaende;
-    });
+    this.endstandService.getEndstaende();
   }
 }
