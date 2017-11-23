@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Endstand } from '../shared/endstand';
+import { EndstandService } from '../shared/endstand.service';
 
 @Component({
   selector: 'app-new-endstand',
@@ -9,7 +10,7 @@ import { Endstand } from '../shared/endstand';
 })
 export class NewEndstandComponent implements OnInit {
 
-  constructor() { }
+  constructor(private endstandService: EndstandService) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,9 @@ export class NewEndstandComponent implements OnInit {
       alert('invalid form!');
     } else {
       let endstand = f.value as Endstand;
-      console.log(JSON.stringify(endstand));
+      this.endstandService.postEndstand(endstand).subscribe(data => {
+        alert("POST successful, please refresh your browser!");
+      });
     }
   }
 }

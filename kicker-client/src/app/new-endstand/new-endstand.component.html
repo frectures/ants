@@ -1,23 +1,11 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <input type="text" name="spieler1" ngModel required>
   <select name="tore1" ngModel required>
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
+    <option *ngFor="let v of [0,1,2,3,4,5,6]" [value]="v">{{v}}</option>
   </select>
   :
   <select name="tore2" ngModel required>
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
+    <option *ngFor="let v of [0,1,2,3,4,5,6]" [value]="v">{{v}}</option>
   </select>
   <input type="text" name="spieler2" ngModel required>
   <input type="submit" />
