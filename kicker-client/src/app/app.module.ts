@@ -9,7 +9,6 @@ import { EndstandComponent } from './endstand/endstand.component';
 import { EndstandService } from './shared/endstand.service';
 import { NewEndstandComponent } from './new-endstand/new-endstand.component';
 import { EndstandOutletComponent } from './endstand-outlet/endstand-outlet.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { RankingsComponent } from './rankings/rankings.component';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
     EndstandComponent,
     NewEndstandComponent,
     EndstandOutletComponent,
-    NavbarComponent,
     RankingsComponent
   ],
   imports: [
