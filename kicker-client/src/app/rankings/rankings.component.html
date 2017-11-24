@@ -1,3 +1,10 @@
-<p>
-  rankings works!
-</p>
+<table style="border:2px solid black; border-spacing:20px">
+  <tr>
+    <th>Spieler</th>
+    <th>Punkte</th>
+  </tr>
+  <tr *ngFor="let x of rankings">
+    <td>{{x.spieler}}</td>
+    <td [ngStyle]="{'color': x.punkte >= 0 ? 'green' : 'red'}">{{x.punkte}}</td>
+  </tr>
+</table>
