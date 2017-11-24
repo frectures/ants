@@ -10,6 +10,7 @@ import { EndstandService } from './shared/endstand.service';
 import { NewEndstandComponent } from './new-endstand/new-endstand.component';
 import { EndstandOutletComponent } from './endstand-outlet/endstand-outlet.component';
 import { RankingsComponent } from './rankings/rankings.component';
+import { RankingsService } from './shared/rankings.service';
 
 const routes: Routes = [
   { path: '', component: EndstandOutletComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [EndstandService],
+  providers: [EndstandService, RankingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
