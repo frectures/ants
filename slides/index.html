@@ -53,7 +53,7 @@ Single page applications, with static type-safety.
 ### JavaScript history
 
 ```text
-         EcmaScript 3
+         EcmaScript 3                         EcmaScript 9
       EcmaScript 2                          EcmaScript 8
     EcmaScript 1            Node          EcmaScript 7
                        jQuery           EcmaScript 6
@@ -72,13 +72,13 @@ Mocha                        EcmaScript 5
 ```html
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
     </head>
     <body>
         <button onclick="alert(0.1 + 0.2)">popup</button>
         <button onclick="console.log('hi')">print</button>
-    </body>              // ~~~~~~~~~~~
-</html>                  // Ctrl Shft K
+    </body>         <!-- ~~~~~~~~~~~ -->
+</html>             <!-- Ctrl Shft K -->
 ```
 
 ----
@@ -88,9 +88,9 @@ Mocha                        EcmaScript 5
 ```
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <script src="hello.js"></script>
-    </head>       // ~~~~~~~~
+    </head>     <!-- ~~~~~~~~ -->
     <body>
         <button onclick="popupSum(0.1, 0.2)">popup</button>
         <button onclick="welcome(['alice', 'bob'])">print</button>
@@ -112,14 +112,14 @@ function welcome(users) {
 
 ### JavaScript Types
 
-| Type | Example Literals |
-| ---- | --------------- |
+| Type    | Example Literals |
+| ------- | --------------- |
 | Boolean | `false`, `true` |
-| Number | `123`, `4.5` |
-| String | `'hello'`, `"world"` |
-| Object | `{ name: 'Arnold', born: 1947 }` |
-| Array | `[ false, 123, 'hello world' ]` |
-| Others | `null`, `undefined` |
+| Number  | `123`, `4.5` |
+| String  | `'hello'`, `"world"` |
+| Object  | `{ name: 'Arnold', born: 1947 }` |
+| Array   | `[ false, 123, 'hello world' ]` |
+| Others  | `null`, `undefined` |
 
 ----
 
@@ -295,10 +295,11 @@ function welcome(users: string[]): void {
     *           |   |    |              |
 |-----+-----+-----+-----+-----|-----+-----+-----+-----+-----|
 10    11    12    13    14    15    16    17    18    19    20
-                                |     |     |
-             (lambdas, classes) ES6   |     |
-                                      ES7   |
-                                            ES8 (async/await)
+                                |     |     |     |
+             (lambdas, classes) ES6   |     |     |
+                                      ES7   |     |
+                              (async/await) ES8   |
+                                                  ES9
 ```
 
 ----
