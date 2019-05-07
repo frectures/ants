@@ -50,194 +50,23 @@ Single page applications, with static type-safety.
 
 ----
 
-### JavaScript history
+### JavaScript slides
 
-```text
-         EcmaScript 3                         EcmaScript 9
-      EcmaScript 2                          EcmaScript 8
-    EcmaScript 1            Node          EcmaScript 7
-                       jQuery           EcmaScript 6
- JavaScript         Ajax
- LiveScript                     EcmaScript 5.1
-Mocha                        EcmaScript 5
-
-|-+-+-+-+-|-+-+-+-+-|-+-+-+-+-|-+-+-+-+-|-+-+-+-+-|
-95        00        05        10        15        20
-```
+https://github.com/se-vl/js
 
 ----
 
-### JavaScript embedded inside HTML
+### JavaScript as a compilation target
 
-```html
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <button onclick="alert(0.1 + 0.2)">popup</button>
-        <button onclick="console.log('hi')">print</button>
-    </body>         <!-- ~~~~~~~~~~~ -->
-</html>             <!-- Ctrl Shft K -->
-```
-
-----
-
-### JavaScript from separate file
-
-```
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script src="hello.js"></script>
-    </head>     <!-- ~~~~~~~~ -->
-    <body>
-        <button onclick="popupSum(0.1, 0.2)">popup</button>
-        <button onclick="welcome(['alice', 'bob'])">print</button>
-    </body>
-</html>
-```
-
-```js
-function popupSum(a, b) {
-    alert(`${a} + ${b} = ${a + b}`);
-}
-
-function welcome(users) {
-    users.forEach( user => console.log(`hello ${user}!`) );
-}
-```
-
-----
-
-### JavaScript Types
-
-| Type    | Example Literals |
-| ------- | --------------- |
-| Boolean | `false`, `true` |
-| Number  | `123`, `4.5` |
-| String  | `'hello'`, `"world"` |
-| Object  | `{ name: 'Arnold', born: 1947 }` |
-| Array   | `[ false, 123, 'hello world' ]` |
-| Others  | `null`, `undefined` |
-
-----
-
-### Falsy values
-
-- `false`
-- `0`, `-0`
-- `NaN`
-- `''`, `""`
-- `null`
-- `undefined`
-
-```js
-// both child and phoneNumber might be null/undefined
-let childsPhoneNumber = child && child.phoneNumber;
-
-let numberToCall = childsPhoneNumber || '911';
-```
-
-----
-
-### OOP: Constructor functions
-
-```js
-function Konto(startsaldo) {
-    this.saldo = startsaldo;
-
-    this.zahleEin = function(betrag) {
-        this.saldo += betrag;
-    }
-
-    this.hebeAb = function(betrag) {
-        this.saldo -= betrag;
-    }
-}
-
-let k1 = new Konto(100);
-let k2 = new Konto(200);
-
-k1.zahleEin(50);
-k2.hebeAb(20);
-
-console.log(k1.saldo);
-console.log(k2.saldo);
-
-console.log(k1);
-console.log(k2);
-
-console.log(k1.zahleEin === k2.zahleEin); // false
-```
-
-----
-
-### OOP: Prototypes
-
-```js
-function Konto(startsaldo) {
-    this.saldo = startsaldo;
-}
-
-Konto.prototype.zahleEin = function(betrag) {
-    this.saldo += betrag;
-}
-
-Konto.prototype.hebeAb = function(betrag) {
-    this.saldo -= betrag;
-}
-
-// ...
-
-console.log(k1.zahleEin === k2.zahleEin); // true
-```
-
-----
-
-### OOP: Classes (syntactic sugar, EcmaScript 6)
-
-```js
-class Konto {
-    constructor(startsaldo) {
-        this.saldo = startsaldo;
-    }
-
-    zahleEin(betrag) {
-        this.saldo += betrag;
-    }
-
-    hebeAb(betrag) {
-        this.saldo -= betrag;
-    }
-}
-```
-
-----
-
-### JavaScript as an intermediate language
-
-```text
-+---------------+  +---------------+  +---------------+
-|               |  |               |  |               |
-| CoffeeScript  |  |     Dart      |  |  TypeScript   |
-|               |  |               |  |               |
-+---------------+  +---------------+  +---------------+
-                 \         |         /
-                  \        v        /
-+---------------+  +---------------+  +---------------+
-|               |  |               |  |               |
-|      GWT      |->|  JavaScript   |<-|  Emscripten   |
-|               |  |               |  |               |
-+---------------+  +---------------+  +---------------+
-                  /        ^        \
-                 /         |         \
-+---------------+  +---------------+  +---------------+
-|               |  |               |  |               |
-|    Clojure    |  |     Scala     |  |    Kotlin     |
-|               |  |               |  |               |
-+---------------+  +---------------+  +---------------+
-```
+- Languages compiling to JavaScript
+  - Clojure
+  - CoffeeScript
+  - Dart
+  - Emscripten
+  - GWT (framework)
+  - Kotlin
+  - Scala
+  - TypeScript
 
 ----
 
