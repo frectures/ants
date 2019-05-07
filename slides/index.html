@@ -137,17 +137,17 @@ function welcome(users: string[]): void {
 
 https://nodejs.org/en/download
 ```
-$ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-$ sudo apt install nodejs
-$ sudo apt install build-essential
-$ node -v
-$ npm -v
+$ sudo apt install curl
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo apt install -y nodejs
+$ npm config set prefix '~/.npm-global'
+
+export PATH=~/.npm-global/bin:$PATH
 ```
 
 https://angular.io/guide/quickstart
 ```
 $ npm install -g @angular/cli
-$ ng -v
 $ ng new kicker-client
 $ cd kicker-client
 $ ng serve --open
